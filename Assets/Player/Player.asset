@@ -20,7 +20,7 @@ MonoBehaviour:
   AirDeceleration: 5
   WallJumpMoveAcceleration: 5
   WallJumpMoveDeceleration: 5
-  MaxRunSpeed: 20
+  MaxRunSpeed: 40
   GroundLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -34,7 +34,7 @@ MonoBehaviour:
   TimeTillJumpApex: 0.35
   GravityOnReleaseMultiplier: 1
   MaxFallSpeed: 26
-  NumberOfJumpsAllowed: 2
+  NumberOfJumpsAllowed: 4
   ResetJumpsOnWallSlide: 1
   TimeForUpwardsCancel: 0.027
   ApexThreshold: 0.97
@@ -46,6 +46,20 @@ MonoBehaviour:
   WallJumpDirection: {x: -20, y: 6.5}
   WallJumpPostBufferTime: 0.125
   WallJumpGravityOnReleaseMultiplier: 1
+  DashTime: 0.2
+  DashSpeed: 80
+  TimeBetweenDashesOnGround: 0.225
+  ResetDashOnWallSlide: 1
+  NummberOfDashes: 5
+  DashDiagonallyBias: 0.4
+  DashGravityOnReleaseMultiplier: 1
+  DashTimeForUpwardsCancel: 0.027
   DebugShowIsGroundedBox: 1
   DebugShowHeadBumpBox: 1
   DebugShowWallHitBox: 1
+  ShowWalkJumArc: 1
+  ShowRunJumpArc: 1
+  StopOnCollision: 1
+  DrawRight: 1
+  ArcResolution: 20
+  VisualisationSteps: 90
