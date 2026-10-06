@@ -49,6 +49,7 @@ public class PlayerMovementStats : ScriptableObject
     [Header("Jump Coyote Time")]
     [Range(0f, 1f)] public float JumpCoyoteTime = 0.1f;
 
+
     [Header("Wall Slide")]
     [Min(0.01f)] public float WallSlideSpeed = 5f;
     [Range(0.25f, 50f)] public float WallSlideDecelerationSpeed = 50f;
@@ -58,14 +59,49 @@ public class PlayerMovementStats : ScriptableObject
     [Range(0f, 1f)] public float WallJumpPostBufferTime = 0.125f;
     [Range(0.01f, 5f)] public float WallJumpGravityOnReleaseMultiplier = 1f;
 
+
+    [Header("Dash")]
+    [Range(0f, 1f)] public float DashTime = 0.11f;
+    [Range(1f, 200f)] public float DashSpeed = 40f;
+    [Range(0f, 1f)] public float TimeBetweenDashesOnGround = 0.225f;
+    public bool ResetDashOnWallSlide = true;
+    [Range(0, 5)] public float NummberOfDashes = 2;
+    [Range(0f, 0.5f)] public float DashDiagonallyBias = 0.4f;
+
+    [Header("Dash Cancel Time")]
+    [Range(0.01f, 5f)] public float DashGravityOnReleaseMultiplier = 1f;
+    [Range(0.02f, 0.3f)] public float DashTimeForUpwardsCancel = 0.027f;
+
+    [Header("Dash Directions")]
+    public readonly Vector2[] DashDirections = new Vector2[]
+    {
+        new Vector2(0, 0), //Nothing
+        new Vector2(1, 0), //Right
+        new Vector2(1, 1).normalized, //Top Right
+        new Vector2(0, 1), //Up
+        new Vector2(-1, 1).normalized, //Top Left
+        new Vector2(-1, 0), //Left
+        new Vector2(-1, -1).normalized, //Bottom Left
+        new Vector2(0, -1), //Down
+        new Vector2(1, -1).normalized, //Bottom Right
+    };
+
+
     [Header("Debug")]
     public bool DebugShowIsGroundedBox;
     public bool DebugShowHeadBumpBox;
     public bool DebugShowWallHitBox;
 
+    [Header("Jump Visualisation Tool")]
+    public bool ShowWalkJumArc = false;
+    public bool ShowRunJumpArc = false;
+    public bool StopOnCollision = true;
+    public bool DrawRight = true;
+    [Range(5, 100)] public int ArcResolution = 20;
+    [Range(0, 500)] public int VisualisationSteps = 90;
+
 
     [Header("Others")]
-    
     //Jump
     public float Gravity { get; private set; }
     public float InitialJumpVelocity { get; private set; }
@@ -75,7 +111,6 @@ public class PlayerMovementStats : ScriptableObject
     public float WallJumpGravity { get; private set; }
     public float InitialWallJumpVelocity { get; private set; }
     public float AdjustedWallJumpHeight { get; private set; }
-
 
     private void OnValidate()
     {
