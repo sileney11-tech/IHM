@@ -49,6 +49,14 @@ public class PlayerMovementStats : ScriptableObject
     [Header("Jump Coyote Time")]
     [Range(0f, 1f)] public float JumpCoyoteTime = 0.1f;
 
+    [Header("Wall Slide")]
+    [Min(0.01f)] public float WallSlideSpeed = 5f;
+    [Range(0.25f, 50f)] public float WallSlideDecelerationSpeed = 50f;
+
+    [Header("Wall Jump")]
+    public Vector2 WallJumpDirection = new Vector2(-20f, 6.5f);
+    [Range(0f, 1f)] public float WallJumpPostBufferTime = 0.125f;
+    [Range(0.01f, 5f)] public float WallJumpGravityOnReleaseMultiplier = 1f;
 
     [Header("Debug")]
     public bool DebugShowIsGroundedBox;
@@ -62,6 +70,11 @@ public class PlayerMovementStats : ScriptableObject
     public float Gravity { get; private set; }
     public float InitialJumpVelocity { get; private set; }
     public float AdjustedJumpHeight { get; private set; }
+
+    //Wall Jump
+    public float WallJumpGravity { get; private set; }
+    public float InitialWallJumpVelocity { get; private set; }
+    public float AdjustedWallJumpHeight { get; private set; }
 
 
     private void OnValidate()
@@ -79,6 +92,11 @@ public class PlayerMovementStats : ScriptableObject
         AdjustedJumpHeight = JumpHeight * JumpHeightCompensationFactor;
         Gravity = -(2f * AdjustedJumpHeight) / Mathf.Pow(TimeTillJumpApex, 2f);
         InitialJumpVelocity = Mathf.Abs(Gravity) * TimeTillJumpApex;
+
+        //wall jump
+        AdjustedWallJumpHeight = WallJumpDirection.y * JumpHeightCompensationFactor;
+        WallJumpGravity = -(2f * AdjustedWallJumpHeight) / Mathf.Pow(TimeTillJumpApex, 2f);
+        InitialWallJumpVelocity = Mathf.Abs(WallJumpGravity) * TimeTillJumpApex;
 
     }
 }

@@ -32,7 +32,7 @@ MonoBehaviour:
   JumpHeight: 6.5
   JumpHeightCompensationFactor: 1.054
   TimeTillJumpApex: 0.35
-  GravityOnReleaseMultiplier: 1.5
+  GravityOnReleaseMultiplier: 1
   MaxFallSpeed: 26
   NumberOfJumpsAllowed: 2
   ResetJumpsOnWallSlide: 1
@@ -41,6 +41,11 @@ MonoBehaviour:
   ApexHangTime: 0.075
   JumpBufferTime: 0.125
   JumpCoyoteTime: 0.1
+  WallSlideSpeed: 5
+  WallSlideDecelerationSpeed: 50
+  WallJumpDirection: {x: -20, y: 6.5}
+  WallJumpPostBufferTime: 0.125
+  WallJumpGravityOnReleaseMultiplier: 1
   DebugShowIsGroundedBox: 1
   DebugShowHeadBumpBox: 1
   DebugShowWallHitBox: 1
