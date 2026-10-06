@@ -839,6 +839,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (_startDashing)
         {
+            _startDashing = false;
             //Ground dash
             if (_isGrounded && _dashOnGroundTimer < 0 && !_isDashing)
             {
