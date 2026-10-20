@@ -38,7 +38,7 @@ public class Feedback : MonoBehaviour
 
      IEnumerator PadVibration(Gamepad pad, float duration)
     {
-       pad.SetMotorSpeeds(0.01f,0.01f);
+       pad.SetMotorSpeeds(vibrationStrenghX, vibrationStrenghY);
        yield return new WaitForSeconds(duration);   
        pad.SetMotorSpeeds(0f,0f);
     }
