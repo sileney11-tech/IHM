@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Collider2D _feetColl;
     [SerializeField] private Collider2D _bodyColl;
 
-    private Rigidbody2D _rb;
+    private Rigidbody2D _rb {get; set;}
 
 
     //Movement Variables
