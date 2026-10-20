@@ -25,7 +25,7 @@ public class Feedback : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        if(other.gameObject.tag == "Ground" || other.gameObject.tag == "Trampoline")
+        if(other.gameObject.tag == "Wall" || other.gameObject.tag == "Trampoline" )
         {
             if(rb != null)
             {

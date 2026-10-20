@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ground
   - Trampoline
+  - Wall
   layers:
   - Default
   - TransparentFX
