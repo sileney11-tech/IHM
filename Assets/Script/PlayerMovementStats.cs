@@ -14,6 +14,7 @@ public class PlayerMovementStats : ScriptableObject
     [Range(0.25f, 50f)] public float WallJumpMoveDeceleration = 5f;
 
     [Header("Run")]
+    public bool canRun = false;
     [Range(1f, 100f)] public float MaxRunSpeed = 20f;
 
     [Header("Grounded/Collision Checks")]
@@ -55,6 +56,7 @@ public class PlayerMovementStats : ScriptableObject
     [Range(0.25f, 50f)] public float WallSlideDecelerationSpeed = 50f;
 
     [Header("Wall Jump")]
+    public bool canWallJump = false;
     public Vector2 WallJumpDirection = new Vector2(-20f, 6.5f);
     [Range(0f, 1f)] public float WallJumpPostBufferTime = 0.125f;
     [Range(0.01f, 5f)] public float WallJumpGravityOnReleaseMultiplier = 1f;

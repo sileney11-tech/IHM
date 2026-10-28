@@ -118,7 +118,7 @@ public class PlayerMovement : MonoBehaviour
                 TurnCheck(moveInput);
 
                 float targetVelocity = 0f;
-                if (_isRunning)
+                if (_isRunning && MoveStats.canRun)
                 {
                     targetVelocity = moveInput.x * MoveStats.MaxRunSpeed;
                 }
@@ -680,6 +680,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void InitiateWallJump()
     {
+        if (!MoveStats.canWallJump)
+        {
+            return;
+        }
         if (!_isWallJumping)
         {
             _isWallJumping = true;

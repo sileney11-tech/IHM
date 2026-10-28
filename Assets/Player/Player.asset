@@ -20,6 +20,7 @@ MonoBehaviour:
   AirDeceleration: 5
   WallJumpMoveAcceleration: 5
   WallJumpMoveDeceleration: 5
+  canRun: 0
   MaxRunSpeed: 40
   GroundLayer:
     serializedVersion: 2
@@ -43,6 +44,7 @@ MonoBehaviour:
   JumpCoyoteTime: 0.1
   WallSlideSpeed: 5
   WallSlideDecelerationSpeed: 50
+  canWallJump: 0
   WallJumpDirection: {x: -20, y: 6.5}
   WallJumpPostBufferTime: 0.125
   WallJumpGravityOnReleaseMultiplier: 1
