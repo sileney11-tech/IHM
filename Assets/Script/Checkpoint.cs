@@ -11,6 +11,7 @@ public class Checkpoint : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             collision.gameObject.GetComponentInParent<CheckpointReceiver>().nextCheckpoint(checkpointValue);
+            Destroy(gameObject);
         }
     }
 }
