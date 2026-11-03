@@ -2,6 +2,8 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.InputSystem;
 
+
+
 public class Feedback : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -9,8 +11,12 @@ public class Feedback : MonoBehaviour
 
    private Rigidbody2D rb;
 
+   
+
    [Header("Vibration")]
-   public float vibrationduration = 0.5f;
+   public float vibrationduration_Spike = 0.1f;
+
+   public float vibrationduration_CheckPoint = 0.3f;
 
    public float vibrationStrenghX = 0.01f;
 
@@ -21,23 +27,34 @@ public class Feedback : MonoBehaviour
     {
         pad = Gamepad.current;
         rb = GetComponent<Rigidbody2D>();
+        
     }
 
-    void OnCollisionEnter2D(Collision2D other)
+
+    /*
+
+    void OnColliderEnter2D(Collision2D other)
     {
-        if(other.gameObject.tag == "Wall" || other.gameObject.tag == "Trampoline" )
+        if(other.gameObject.tag == "Spike" || other.gameObject.tag == "Trampoline" )
         {
             if(rb != null)
             {
-                StartCoroutine(PadVibration(pad,vibrationduration));
+                CoroutineGamepad;
             }
             
         }
-        
+
+    }
+    */
+
+    public void CoroutineGamepad(float duration)
+    {
+       StartCoroutine(PadVibration(pad,duration));
     }
 
      IEnumerator PadVibration(Gamepad pad, float duration)
     {
+        
        pad.SetMotorSpeeds(vibrationStrenghX, vibrationStrenghY);
        yield return new WaitForSeconds(duration);   
        pad.SetMotorSpeeds(0f,0f);

@@ -4,11 +4,11 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Collections;
 
+
 public class Trampoline : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
  
-
     public float speedUp = 1f;
 
 
@@ -19,17 +19,12 @@ public class Trampoline : MonoBehaviour
            var rb = other.gameObject.GetComponent<Rigidbody2D>(); 
            if(rb != null)
             {
-                rb.AddForce(new Vector2(0,speedUp));
+                rb.linearVelocity= new Vector2(rb.linearVelocity.x,0f);
+                rb.AddForce(Vector2.up*speedUp);
             }
           
         }
         
     }
 
-    IEnumerator PadVibration(Gamepad pad, float duration)
-    {
-       pad.SetMotorSpeeds(0.01f,0.01f);
-       yield return new WaitForSeconds(duration);   
-       pad.SetMotorSpeeds(0f,0f);
-    }
 }
