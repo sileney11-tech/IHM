@@ -30,12 +30,12 @@ MonoBehaviour:
   HeadWidth: 0.75
   WalDetectionRayLength: 0.125
   WallDetectionRayHeightMultiplier: 0.9
-  JumpHeight: 6.5
+  JumpHeight: 7
   JumpHeightCompensationFactor: 1.054
   TimeTillJumpApex: 0.35
   GravityOnReleaseMultiplier: 1
   MaxFallSpeed: 26
-  NumberOfJumpsAllowed: 4
+  NumberOfJumpsAllowed: 2
   ResetJumpsOnWallSlide: 1
   TimeForUpwardsCancel: 0.027
   ApexThreshold: 0.97
@@ -44,7 +44,7 @@ MonoBehaviour:
   JumpCoyoteTime: 0.1
   WallSlideSpeed: 5
   WallSlideDecelerationSpeed: 50
-  canWallJump: 0
+  canWallJump: 1
   WallJumpDirection: {x: -20, y: 6.5}
   WallJumpPostBufferTime: 0.125
   WallJumpGravityOnReleaseMultiplier: 1
@@ -52,7 +52,7 @@ MonoBehaviour:
   DashSpeed: 80
   TimeBetweenDashesOnGround: 0.225
   ResetDashOnWallSlide: 1
-  NummberOfDashes: 5
+  NummberOfDashes: 1
   DashDiagonallyBias: 0.4
   DashGravityOnReleaseMultiplier: 1
   DashTimeForUpwardsCancel: 0.027

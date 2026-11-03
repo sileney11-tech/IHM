@@ -4,12 +4,19 @@ using UnityEngine.InputSystem;
 
 
 
+
 public class Feedback : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
    public Gamepad pad;
 
    private Rigidbody2D rb;
+
+   [Header("Audio Clip")]
+
+   public AudioClip AudioCheckPoint;
+
+   [SerializeField] public AudioSource source;
 
    
 
@@ -27,6 +34,8 @@ public class Feedback : MonoBehaviour
     {
         pad = Gamepad.current;
         rb = GetComponent<Rigidbody2D>();
+        source = GetComponent<AudioSource>();
+        
         
     }
 
@@ -50,6 +59,16 @@ public class Feedback : MonoBehaviour
     public void CoroutineGamepad(float duration)
     {
        StartCoroutine(PadVibration(pad,duration));
+    }
+
+    public void StartAudio()
+    {
+        if(source != null && AudioCheckPoint != null)
+        {
+            //AudioSource.PlayOneShot(AudioCheckPoint);
+            Debug.Log("Audio Playing");
+        }
+        
     }
 
      IEnumerator PadVibration(Gamepad pad, float duration)

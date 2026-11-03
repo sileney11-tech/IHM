@@ -7,12 +7,8 @@ public class Checkpoint : MonoBehaviour
     [SerializeField]
     private int checkpointValue;
 
-    public AudioSource audio;
 
-    void Awake()
-    {
-        audio = GetComponent<AudioSource>();
-    }
+
 
     void OnTriggerEnter2D(Collider2D collision)
     {
@@ -22,13 +18,8 @@ public class Checkpoint : MonoBehaviour
             if(f != null)
             {
                 f.CoroutineGamepad(f.vibrationduration_CheckPoint);
+                f.StartAudio();
             }
-           /* if(audio != null)
-            {
-                audio.Play();
-                Debug.Log("Audio Playing");
-            }  
-            */   
             collision.gameObject.GetComponentInParent<CheckpointReceiver>().nextCheckpoint(checkpointValue);
             Destroy(gameObject);
         }
