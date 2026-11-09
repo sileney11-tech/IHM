@@ -358,6 +358,7 @@ public class PlayerMovement : MonoBehaviour
         if (context.started)
         {
             _startJumping = true;
+            SoundManager.PlaySound(SoundType.JUMP);
         }
         if (context.canceled)
         {
@@ -478,6 +479,7 @@ public class PlayerMovement : MonoBehaviour
         //Apply gravity while jumping
         if (_isJumping)
         {
+            
             //Check for head bump
             if (_bumpedHead)
             {
@@ -822,6 +824,8 @@ public class PlayerMovement : MonoBehaviour
         if (context.started)
         {
             _startDashing = true;
+            SoundManager.PlaySound(SoundType.DASH);
+            
         }
         if (context.canceled)
         {

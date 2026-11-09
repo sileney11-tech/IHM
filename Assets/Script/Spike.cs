@@ -15,6 +15,7 @@ public class Spike : MonoBehaviour
                 f.CoroutineGamepad(f.vibrationduration_Spike);
                 }
             }
+            SoundManager.PlaySound(SoundType.DEAD);
             collision.gameObject.GetComponentInParent<CheckpointReceiver>().resetPosition();
             GameManager._instance.CharacterKilled();
         }

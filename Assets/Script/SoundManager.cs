@@ -8,14 +8,15 @@ public enum SoundType
     CHECKPOINT,
     JUMP,
     DEAD,
-    VICTORY_GAME
+    VICTORY_GAME,
+    DASH,
 }
 
 [RequireComponent(typeof(AudioSource))]
 public class SoundManager : MonoBehaviour
 {
     [SerializeField] private AudioClip[] soundList;
-    private static SoundManager instance;
+    public static SoundManager instance;
     [SerializeField] private AudioSource audioSource;
     
     private void Awake()

@@ -23,6 +23,7 @@ public class Checkpoint : MonoBehaviour
                 }
                 f.StartAudio();
             }
+            SoundManager.PlaySound(SoundType.CHECKPOINT);
             collision.gameObject.GetComponentInParent<CheckpointReceiver>().nextCheckpoint(checkpointValue);
             Destroy(gameObject);
         }

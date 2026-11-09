@@ -13,6 +13,7 @@ public class Door : MonoBehaviour
             GameManager._instance.CharacterWon();
             StartCoroutine(Bravo(intervalleToOpenMenu));
             
+            
         }     
     }
 
