@@ -24,13 +24,18 @@ public class GameManager : MonoBehaviour
     public void CharacterKilled()
     {
         _uiManager.MortTextEnable();
-        Debug.Log("Mort");
+    
     }
 
     public void CharacterWon()
     {
         _uiManager.WinTextEnable();
-        Debug.Log("Gagné");
+        
+    }
+
+    public void OpenMenu()
+    {
+        _uiManager.OuvrirMenu();
     }
 
   
