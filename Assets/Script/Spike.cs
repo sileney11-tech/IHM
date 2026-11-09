@@ -9,10 +9,14 @@ public class Spike : MonoBehaviour
             //feedback
             Feedback f = collision.gameObject.GetComponentInParent<Feedback>() ;
             if(f != null)
-            {
+            {   
+                if(f.pad !=null)
+                {
                 f.CoroutineGamepad(f.vibrationduration_Spike);
+                }
             }
             collision.gameObject.GetComponentInParent<CheckpointReceiver>().resetPosition();
+            GameManager._instance.CharacterKilled();
         }
     }
 }

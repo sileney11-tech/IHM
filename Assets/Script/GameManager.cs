@@ -7,9 +7,31 @@ public class GameManager : MonoBehaviour
 
     public static GameManager _instance;
 
-    public void YouWin()
+    public void Awake()
     {
-        Debug.Log("T'as gagné ! Bravo !");
+        if (_instance == null)
+        {
+            _instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
+    public UIManager _uiManager;
+
+    public void CharacterKilled()
+    {
+        _uiManager.MortTextEnable();
+        Debug.Log("Mort");
+    }
+
+    public void CharacterWon()
+    {
+        _uiManager.WinTextEnable();
+        Debug.Log("Gagné");
+    }
+
+  
 }

@@ -16,8 +16,11 @@ public class Checkpoint : MonoBehaviour
         {
             Feedback f = collision.gameObject.GetComponentInParent<Feedback>();
             if(f != null)
-            {
-                f.CoroutineGamepad(f.vibrationduration_CheckPoint);
+            {   
+                if(f.pad != null)
+                {
+                    f.CoroutineGamepad(f.vibrationduration_CheckPoint);
+                }
                 f.StartAudio();
             }
             collision.gameObject.GetComponentInParent<CheckpointReceiver>().nextCheckpoint(checkpointValue);

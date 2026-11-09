@@ -1,17 +1,22 @@
 using UnityEngine;
-using UnityEngine.UIElements;
+using UnityEngine.UI;
+using TMPro;
 
 public class UIManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public TMP_Text WinText;
+
+    public TMP_Text MortText;
+
+    public void WinTextEnable()
     {
-        
+        WinText.text = "T'as gagné ! Bravo !";
+        Debug.Log(WinText.text);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void MortTextEnable()
     {
-        
+        MortText.text = MortText.text + "Héhé  ";
+        Debug.Log(MortText.text);
     }
 }
