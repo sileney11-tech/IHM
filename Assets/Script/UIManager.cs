@@ -9,7 +9,7 @@ public class UIManager : MonoBehaviour
     //public TMP_Text MortText;
 
     public GameObject menu;
-    public GameObject canvasTest;
+    //public GameObject canvasTest;
 
    /* public void WinTextEnable()
     {
@@ -27,13 +27,13 @@ public class UIManager : MonoBehaviour
     public void OuvrirMenu()
     {
         menu.SetActive(true);
-        canvasTest.SetActive(false);
+        //canvasTest.SetActive(false);
     }
 
     public void FermerMenu()
     {
         menu.SetActive(false);
-        canvasTest.SetActive(true);
+        //canvasTest.SetActive(true);
     }
 
     public void Quitter()
