@@ -3242,7 +3242,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f142349a3d980fe42a531e7b5f63aa62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Checkpoint
-  checkpointValue: 4
+  checkpointValue: 5
 --- !u!212 &292943186
 SpriteRenderer:
   serializedVersion: 2
@@ -8909,6 +8909,7 @@ MonoBehaviour:
   - {x: -22, y: 0}
   - {x: 39, y: 24}
   - {x: 105, y: 29}
+  - {x: 140, y: 47}
 --- !u!82 &996108422
 AudioSource:
   m_ObjectHideFlags: 0
