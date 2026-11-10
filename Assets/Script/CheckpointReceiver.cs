@@ -43,6 +43,7 @@ public class CheckpointReceiver : MonoBehaviour
         if (currentCheckpoint < newCheck)
         {
             currentCheckpoint = newCheck;
+        }
             switch(newCheck)
             {
                 case 1:
@@ -69,8 +70,6 @@ public class CheckpointReceiver : MonoBehaviour
                     UnlockGodMode();
                     break;
             }
-
-        }
     }
 
     public void resetPosition()
