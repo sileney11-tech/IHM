@@ -10,7 +10,8 @@ public class Door : MonoBehaviour
     {
         if (collision.gameObject.tag =="Player")
         {
-            GameManager._instance.CharacterWon();
+            //GameManager._instance.CharacterWon();
+            SoundManager.PlaySound(SoundType.VICTORY_GAME);
             StartCoroutine(Bravo(intervalleToOpenMenu));
             
             
@@ -22,6 +23,7 @@ public class Door : MonoBehaviour
         
        yield return new WaitForSeconds(duration); 
        GameManager._instance.OpenMenu(); 
+       Debug.Log("Fini");
        
     }
 }

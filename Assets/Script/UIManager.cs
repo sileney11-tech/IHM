@@ -4,14 +4,14 @@ using TMPro;
 
 public class UIManager : MonoBehaviour
 {
-    public TMP_Text WinText;
+   // public TMP_Text WinText;
 
-    public TMP_Text MortText;
+    //public TMP_Text MortText;
 
     public GameObject menu;
     public GameObject canvasTest;
 
-    public void WinTextEnable()
+   /* public void WinTextEnable()
     {
         WinText.text = "T'as gagné ! Bravo !";
         Debug.Log(WinText.text);
@@ -22,6 +22,7 @@ public class UIManager : MonoBehaviour
         MortText.text = MortText.text + "Héhé  ";
         Debug.Log(MortText.text);
     }
+    */
 
     public void OuvrirMenu()
     {

@@ -17,7 +17,7 @@ public class Spike : MonoBehaviour
             }
             SoundManager.PlaySound(SoundType.DEAD);
             collision.gameObject.GetComponentInParent<CheckpointReceiver>().resetPosition();
-            GameManager._instance.CharacterKilled();
+            //GameManager._instance.CharacterKilled();
         }
     }
 }

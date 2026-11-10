@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
     }
 
     public UIManager _uiManager;
-
+    /*
     public void CharacterKilled()
     {
         _uiManager.MortTextEnable();
@@ -32,6 +32,7 @@ public class GameManager : MonoBehaviour
         _uiManager.WinTextEnable();
         
     }
+    */
 
     public void OpenMenu()
     {
